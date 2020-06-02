@@ -1,0 +1,37 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+    
+    <aura:attribute name="CandidateName" type="string" default=""/>
+    <aura:attribute name="RollNumber" type="string" default=""/>
+    <aura:attribute name="Phone" type="integer" default=""/>
+    <aura:attribute name="Email" type="string" default=""/>
+    <aura:attribute name="Course" type="string" default=""/>
+    <aura:attribute name="CourseType" type="string[]" default="  ,Full Time,Part Time,---None---"/>
+    <aura:attribute name="isHeRegular" type="Boolean" default="False"/>
+    <aura:attribute name="Areyouinterestedinonlinecourse" type="boolean"/>
+    <br/><br/>
+    	<div class="slds-m-top_x-large">
+    <div class="slds-page-header">
+    <div class="slds-align_absolute-center">
+    <div class="slds-text-heading_large">
+    CANDIDATE REGISTRATION FORM
+        </div>
+        </div>
+        </div>
+        </div>
+    <div class="slds-size_3-of-8">
+    <lightning:input label="Name Of The Candidate" name="myname" value="{!v.CandidateName}"/><br/>
+    <lightning:input label="Roll Number" name="Rnumber" value="{!v.RollNumber}" /><br/>
+    <lightning:input type="telephone" label="Phone" name="phone" value="{!v.Phone}"/><br/>
+    <lightning:input type="Email" label="Email" name="myname" value="{!v.Email}"/><br/>
+    <lightning:input label="Course" name="myname" value="{!v.Course}"/><br/>
+   <lightning:select name="coursetype" label="Course Type" aura:id="mySelect" >
+         <aura:iteration items="{!v.CourseType}" var="ct">
+            <option text="{!ct}" value="{!ct}" />
+        </aura:iteration>
+    </lightning:select><br/>
+    <lightning:input label="Is he regulare to the course" type="checkbox" /><br/>
+    <lightning:input label="Are you interested in online course" type="checkbox-button"/>
+    <lightning:button label="submit"/>
+    </div>
+</aura:component>
